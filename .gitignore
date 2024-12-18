@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+env/
+
+# SQLite database
+*.sqlite3
+
+# Django secret key
+*.env
+
+# Compiled files
+__pycache__/
+*.pyc
+
+# Static and media
+/static/
+/media/
+
+# IDE files
+.vscode/
+.idea/
