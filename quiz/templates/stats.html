@@ -1,0 +1,23 @@
+<!-- quiz/templates/quiz/stats.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Stats</title>
+</head>
+<body>
+    <h1>Your Quiz Stats</h1>
+    <p>Total Questions Answered: {{ total_questions }}</p>
+    <p>Correct Answers: {{ correct_answers }}</p>
+    <p>Incorrect Answers: {{ incorrect_answers }}</p>
+
+    <h3>Details:</h3>
+    <ul>
+        {% for answer in answers %}
+            <li>Question: {{ answer.question.text }} | Your Answer: {{ answer.selected_option }} | {% if answer.is_correct %}Correct{% else %}Incorrect{% endif %}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'start_quiz' %}">Start New Quiz</a>
+</body>
+</html>

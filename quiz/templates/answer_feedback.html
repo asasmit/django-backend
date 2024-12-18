@@ -1,0 +1,14 @@
+<!-- quiz/templates/quiz/answer_feedback.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Answer Feedback</title>
+</head>
+<body>
+    <h2>Your Answer is: {% if is_correct %}Correct!{% else %}Incorrect{% endif %}</h2>
+    <a href="{% url 'get_random_question' %}">Next Question</a>
+    <br>
+    <a href="{% url 'get_stats' %}">View Stats</a>
+</body>
+</html>

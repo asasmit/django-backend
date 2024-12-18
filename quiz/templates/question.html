@@ -1,0 +1,34 @@
+<!-- quiz/templates/quiz/question.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Question</title>
+</head>
+<body>
+    <h2>{{ question.text }}</h2>
+
+    <form method="POST" action="{% url 'submit_answer' %}">
+        {% csrf_token %}
+        <input type="hidden" name="question_id" value="{{ question.id }}">
+
+        <label>
+            <input type="radio" name="selected_option" value="A"> {{ question.option_a }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="selected_option" value="B"> {{ question.option_b }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="selected_option" value="C"> {{ question.option_c }}
+        </label><br>
+
+        <label>
+            <input type="radio" name="selected_option" value="D"> {{ question.option_d }}
+        </label><br>
+
+        <button type="submit">Submit Answer</button>
+    </form>
+</body>
+</html>
